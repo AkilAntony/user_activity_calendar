@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
@@ -90,6 +90,7 @@ const BigCalendar = () => {
         startAccessor="start"
         endAccessor="end"
         view={view}
+        views = {['month']}
         date={date}
         onView={setView}
         onNavigate={setDate}
