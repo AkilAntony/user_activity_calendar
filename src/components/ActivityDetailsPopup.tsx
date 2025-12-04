@@ -44,7 +44,7 @@ const ActivityDetailsPopup = ({ selectedDateDetails, isOpen }: Props) => {
             {selectedDateDetails.data.length > 0
               ? `User Activity - ${format(
                   selectedDateDetails.date?.toString() as string,
-                  "dd-mm-yyyy"
+                  "dd-MM-yyyy"
                 )}`
               : "Warning"}
           </DialogTitle>
@@ -57,7 +57,7 @@ const ActivityDetailsPopup = ({ selectedDateDetails, isOpen }: Props) => {
           ) : (
             `No data found for the selected date ${format(
               selectedDateDetails.date?.toString() as string,
-              "dd-mm-yyyy"
+              "dd-MM-yyyy"
             )}`
           )}
         </div>
