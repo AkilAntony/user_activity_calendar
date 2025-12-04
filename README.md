@@ -15,8 +15,8 @@ This project displays a calendar view of user activity, and when you click a dat
 - Recharts (Bar graph and charts)
 - tailwindcss (Styling)
 
-  ## How It Works
-  1️. Calendar
+## How It Works
+1️. Calendar
     - Shows events for each date. 
     - Clicking a date sets the selectedDate state.
 
