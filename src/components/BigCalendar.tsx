@@ -4,6 +4,8 @@ import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import {  format } from "date-fns";
 import { dummyData } from "@/lib/apiResponse";
+import { setSelectedDateInfo } from "@/store/slices/calendarSlice";
+import { useAppDispatch } from "@/hooks/useDispatch";
 
 const localizer = momentLocalizer(moment);
 
@@ -14,6 +16,8 @@ const BigCalendar = () => {
   const [date, setDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [selectedData, setSelectedData] = useState<any[]>([]);
+
+  const dispatch = useAppDispatch();
 
   const demoEvents = [
     {
@@ -76,6 +80,11 @@ const BigCalendar = () => {
   const handleDateClick = (slot: any) => {
     const selectedEventStartDate = format(slot.start, "dd-MM-yyyy");
     const selectedDateDetails = dummyData[selectedEventStartDate];
+
+     dispatch(setSelectedDateInfo({
+      date: slot.start,
+      data: selectedDateDetails || []
+    }));
 
     setSelectedDate(slot.start);
     setSelectedData(selectedDateDetails);
