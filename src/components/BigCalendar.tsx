@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import { format } from "date-fns";
+import { format, parse } from "date-fns";
 import { dummyData } from "@/lib/apiResponse";
 import { setSelectedDateInfo } from "@/store/slices/calendarSlice";
 import { useAppDispatch } from "@/hooks/useDispatch";
@@ -15,36 +15,17 @@ const BigCalendar = () => {
   );
   const [date, setDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
-  const [selectedData, setSelectedData] = useState<any[]>([]);
 
   const dispatch = useAppDispatch();
 
-  const demoEvents = [
-    {
+  const calendarEvents = Object.keys(dummyData).map((key) => {
+    const date = format(parse(key, "dd-MM-yyyy", new Date()), "yyyy-MM-dd");
+    return {
       title: "Data Available",
-      start: moment("2025-12-05").startOf("day").toDate(),
-      end: moment("2025-12-05").endOf("day").toDate(),
-      allDay: true,
-    },
-    {
-      title: "Data Available",
-      start: moment("2025-12-23").startOf("day").toDate(),
-      end: moment("2025-12-23").endOf("day").toDate(),
-      allDay: true,
-    },
-    {
-      title: "Data Available",
-      start: moment("2025-12-08").startOf("day").toDate(),
-      end: moment("2025-12-08").endOf("day").toDate(),
-      allDay: true,
-    },
-    {
-      title: "Data Available",
-      start: moment("2025-12-12").startOf("day").toDate(),
-      end: moment("2025-12-12").endOf("day").toDate(),
-      allDay: true,
-    },
-  ];
+      start: moment(date).startOf("day").toDate(),
+      end: moment(date).endOf("day").toDate(),
+    };
+  });
 
   const dayPropGetter = (date: Date) => {
     const isSelected =
@@ -52,7 +33,7 @@ const BigCalendar = () => {
       moment(date).format("YYYY-MM-DD") ===
         moment(selectedDate).format("YYYY-MM-DD");
 
-    const hasEvent = demoEvents.some((event) => {
+    const hasEvent = calendarEvents.some((event) => {
       const eventDate = moment(event.start).startOf("day");
       const currentDate = moment(date).startOf("day");
       return eventDate.isSame(currentDate);
@@ -89,7 +70,6 @@ const BigCalendar = () => {
     );
 
     setSelectedDate(slot.start);
-    setSelectedData(selectedDateDetails);
   };
 
   return (
@@ -97,7 +77,7 @@ const BigCalendar = () => {
       <Calendar
         selectable
         localizer={localizer}
-        events={demoEvents}
+        events={calendarEvents}
         startAccessor="start"
         endAccessor="end"
         view={view}

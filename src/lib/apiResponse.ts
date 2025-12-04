@@ -5,7 +5,7 @@ export const dummyData: Record<string, { [key: string]: number }[]> = {
     { "user_3": 8 },
     { "user_4": 1 }
   ],
-  "02-12-2025": [
+  "22-12-2025": [
     { "user_1": 3 },
     { "user_2": 6 },
     { "user_3": 1 },
@@ -23,7 +23,7 @@ export const dummyData: Record<string, { [key: string]: number }[]> = {
     { "user_3": 5 },
     { "user_4": 3 }
   ],
-  "05-12-2025": [
+  "25-12-2025": [
     { "user_1": 1 },
     { "user_2": 4 },
     { "user_3": 6 },
@@ -35,13 +35,8 @@ export const dummyData: Record<string, { [key: string]: number }[]> = {
     { "user_3": 7 },
     { "user_4": 5 }
   ],
-  "07-12-2025": [
-    { "user_1": 6 },
-    { "user_2": 5 },
-    { "user_3": 2 },
-    { "user_4": 1 }
-  ],
-  "08-12-2025": [
+
+  "24-12-2025": [
     { "user_1": 8 },
     { "user_2": 2 },
     { "user_3": 9 },
@@ -53,25 +48,25 @@ export const dummyData: Record<string, { [key: string]: number }[]> = {
     { "user_3": 5 },
     { "user_4": 8 }
   ],
-  "10-12-2025": [
+  "11-12-2025": [
     { "user_1": 6 },
     { "user_2": 4 },
     { "user_3": 2 },
     { "user_4": 7 }
   ],
-  "11-12-2025": [
+  "16-12-2025": [
     { "user_1": 9 },
     { "user_2": 1 },
     { "user_3": 3 },
     { "user_4": 6 }
   ],
-  "12-12-2025": [
+  "19-12-2025": [
     { "user_1": 2 },
     { "user_2": 8 },
     { "user_3": 4 },
     { "user_4": 9 }
   ],
-  "13-12-2025": [
+  "27-12-2025": [
     { "user_1": 5 },
     { "user_2": 6 },
     { "user_3": 1 },
@@ -83,7 +78,7 @@ export const dummyData: Record<string, { [key: string]: number }[]> = {
     { "user_3": 2 },
     { "user_4": 8 }
   ],
-  "15-12-2025": [
+  "30-12-2025": [
     { "user_1": 4 },
     { "user_2": 9 },
     { "user_3": 6 },
