@@ -1,6 +1,5 @@
-import type { SelectedDateData } from '@/types/common';
-import { createSlice, type PayloadAction} from '@reduxjs/toolkit';
-
+import type { SelectedDateData } from "@/types/common";
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
 interface CalendarState {
   selectedDateInfo: SelectedDateData | null;
@@ -11,10 +10,13 @@ const initialState: CalendarState = {
 };
 
 const calendarSlice = createSlice({
-  name: 'calendar',
+  name: "calendar",
   initialState,
   reducers: {
-    setSelectedDateInfo: (state, action: PayloadAction<SelectedDateData | null>) => {
+    setSelectedDateInfo: (
+      state,
+      action: PayloadAction<SelectedDateData | null>
+    ) => {
       state.selectedDateInfo = action.payload;
     },
     clearSelectedDate: (state) => {

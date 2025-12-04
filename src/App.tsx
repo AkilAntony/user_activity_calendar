@@ -13,13 +13,12 @@ function App() {
     <div className="">
       <BigCalendar />
 
-      {selectedDateInfo?.date ? 
+      {selectedDateInfo?.date ? (
         <ActivityDetailsPopup
           selectedDateDetails={selectedDateInfo}
           isOpen={!!selectedDateInfo}
-        /> : null
-      }
-    
+        />
+      ) : null}
     </div>
   );
 }

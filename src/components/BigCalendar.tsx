@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import {  format } from "date-fns";
+import { format } from "date-fns";
 import { dummyData } from "@/lib/apiResponse";
 import { setSelectedDateInfo } from "@/store/slices/calendarSlice";
 import { useAppDispatch } from "@/hooks/useDispatch";
@@ -61,7 +61,7 @@ const BigCalendar = () => {
     if (isSelected) {
       return {
         style: {
-          backgroundColor: "#e1bee7",  
+          backgroundColor: "#e1bee7",
           border: "2px solid #8e24aa",
         },
       };
@@ -81,10 +81,12 @@ const BigCalendar = () => {
     const selectedEventStartDate = format(slot.start, "dd-MM-yyyy");
     const selectedDateDetails = dummyData[selectedEventStartDate];
 
-     dispatch(setSelectedDateInfo({
-      date: slot.start,
-      data: selectedDateDetails || []
-    }));
+    dispatch(
+      setSelectedDateInfo({
+        date: slot.start,
+        data: selectedDateDetails || [],
+      })
+    );
 
     setSelectedDate(slot.start);
     setSelectedData(selectedDateDetails);
@@ -99,7 +101,7 @@ const BigCalendar = () => {
         startAccessor="start"
         endAccessor="end"
         view={view}
-        views = {['month']}
+        views={["month"]}
         date={date}
         onView={setView}
         onNavigate={setDate}

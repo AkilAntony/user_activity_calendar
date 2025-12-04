@@ -1,5 +1,5 @@
-import { configureStore } from '@reduxjs/toolkit';
-import calendarReducer from './slices/calendarSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import calendarReducer from "./slices/calendarSlice";
 
 export const store = configureStore({
   reducer: {
@@ -8,8 +8,8 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
-        ignoredActions: ['calendar/setSelectedDateInfo'],
-        ignoredPaths: ['calendar.selectedDateInfo.date'],
+        ignoredActions: ["calendar/setSelectedDateInfo"],
+        ignoredPaths: ["calendar.selectedDateInfo.date"],
       },
     }),
 });
