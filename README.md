@@ -1,73 +1,31 @@
-# React + TypeScript + Vite
+# User Activity Calendar
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple User Activity Tracker built using React, Big Calendar, and Recharts.
+This project displays a calendar view of user activity, and when you click a date, a bar graph appears showing the number of activities performed by each user on that selected day. If no activities are found on that day, it will show " NO Data found for the selected date".
 
-Currently, two official plugins are available:
+## 🚀 Features
+- Interactive Calendar using react-big-calendar
+- Bar Graph Visualization using recharts
+- Click on a date to view user activity
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- React JS 
+- react-big-calendar(Calendar UI)
+- date-fns	(Date management)
+- Recharts (Bar graph and charts)
+- tailwindcss (Styling)
 
-## React Compiler
+## How It Works
+1️. Calendar
+    - Shows events for each date. 
+    - Clicking a date sets the selectedDate state.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+ 2️. Bar Graph
+ - Reads data from dummy JSON.
+ - Shows a bar for each user and their activity count.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Installation & Setup
+- Clone the repository (git clone https://github.com/your-username/user-activity-calendar.git)
+- navigate to the project directory (cd user-activity-calendar)
+- Install dependencies (npm install).
+- Start the development server (npm run dev)
