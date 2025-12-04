@@ -1,7 +1,7 @@
 # User Activity Calendar
 
 A simple User Activity Tracker built using React, Big Calendar, and Recharts.
-This project displays a calendar view of user activity, and when you click a date, a bar graph appears showing the number of activities performed by each user on that selected day.
+This project displays a calendar view of user activity, and when you click a date, a bar graph appears showing the number of activities performed by each user on that selected day. If no activities are found on that day, it will show " NO Data found for the selected date".
 
 ## 🚀 Features
 - Interactive Calendar using react-big-calendar
